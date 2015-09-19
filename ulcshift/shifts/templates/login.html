@@ -1,0 +1,8 @@
+
+<h2>LOGIN</h2>
+
+<form action = "{% url 'shifts:login_user' %}" method = "post">
+    {% csrf_token %}
+    {{form }}
+    <input type="submit" value="Submit" />
+</form>

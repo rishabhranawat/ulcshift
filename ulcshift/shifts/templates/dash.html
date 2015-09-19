@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Editors Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Editors List of Articles</h2>
+              
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Title</th>
+        <th>Sub Title</th>
+        <th>Content</th>
+        <th>Image</th>
+        <th>Author</th>
+        <th>Update</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {%for i in o%}
+            <tr>
+                <!-- <td><a href="{{i.id}}">{{i.id}}</a></td> -->
+                <td>{{i.time}}</td>
+                <td>{{i.title}}</td>
+                <td>{{i.sub_title}}</td>
+                <td>{{i.body}}</td>
+                <td>{{i.image}}</td>
+                <td>{{i.author.username}}</td>
+                <td><a href = "{% url 'write:article-edit' i.pk %}" >Update status</a></td>
+            </tr>
+        {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html> 
+
