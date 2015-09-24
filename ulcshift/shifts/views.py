@@ -90,12 +90,18 @@ class SubMain(View):
 			return HttpResponse("Okay")
 
 
+class Dashboard(View):
+
+	template_name = 'dash.html'
+	def get(self, request, *args, **kwargs):
+		o = Subs.objects.all()
+		return render(request, self.template_name, {'o':o})
 
 
-
-
-
-
+class Take(View):
+	template_name = "take.html"
+	def get(self, request, pk, *args, **kwargs):
+		
 
 
 

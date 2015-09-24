@@ -11,18 +11,18 @@
 <body>
 
 <div class="container">
-  <h2>Editors List of Articles</h2>
+  <h2>List of Subs</h2>
               
   <table class="table">
     <thead>
       <tr>
         <th>Time</th>
-        <th>Title</th>
-        <th>Sub Title</th>
-        <th>Content</th>
-        <th>Image</th>
-        <th>Author</th>
-        <th>Update</th>
+        <th>Place</th>
+        <th>Pay</th>
+        <th>Courses</th>
+        <th>Posted By</th>
+        <th>Take it!</th>
+        
 
       </tr>
     </thead>
@@ -31,13 +31,12 @@
             <tr>
                 <!-- <td><a href="{{i.id}}">{{i.id}}</a></td> -->
                 <td>{{i.time}}</td>
-                <td>{{i.title}}</td>
-                <td>{{i.sub_title}}</td>
-                <td>{{i.body}}</td>
-                <td>{{i.image}}</td>
-                <td>{{i.author.username}}</td>
-                <td><a href = "{% url 'write:article-edit' i.pk %}" >Update status</a></td>
-            </tr>
+                <td>{{i.where}}</td>
+                <td>{{i.pay}}</td>
+                <td>{{i.courses}}</td>
+                <td>{{i.by}}</td>
+                <td><a href = "{% url 'shift:take' i.pk %}" >Update status</a></td>
+                
         {%endfor%}
     </tbody>
   </table>

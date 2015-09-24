@@ -2,7 +2,7 @@ from django.conf.urls import url, patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from shifts.views import register, login_user, SubMain
+from shifts.views import register, login_user, SubMain, Dashboard
 
 urlpatterns = patterns('',
     # ex: /polls/,
@@ -11,6 +11,9 @@ urlpatterns = patterns('',
      url(r'^add/', SubMain.as_view(), name = 'SubMain'),
 
      url(r'^login/', login_user.as_view(), name = 'login_user'),
+
+
+     url(r'^dash/', Dashboard.as_view(), name = 'dashboard'),
 
      
 )+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
