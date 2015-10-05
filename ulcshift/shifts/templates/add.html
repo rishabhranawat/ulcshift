@@ -1,8 +1,31 @@
+<head>
 
-<h2>ADD SUB</h2>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<form action = "{% url 'shifts:SubMain' %}" method = "post">
-    {% csrf_token %}
-    {{form }}
-    <input type="submit" value="Submit" />
-</form>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	
+<div class = "container">
+	<form class="form-horizontal write_form" action = "{% url 'shifts:SubMain' %}" method="post">
+	  <div class="form-group form-group-sm col-xs-3">
+
+			{% csrf_token %}
+			{{form}}
+
+		<input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+		<div>
+	</form>
+</div>
+
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import View
 from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
 from django.utils import timezone
@@ -56,7 +56,7 @@ class login_user(View):
 			if user is not None:
 				if user.is_active:
 					login(request, user)
-					return HttpResponse("Okay")
+					return redirect('/shifts/add/')
 				else:
 					return HttpResponse("Sorry your account is not active yet")
 			else:
@@ -97,10 +97,6 @@ class Dashboard(View):
 		o = Subs.objects.all()
 		return render(request, self.template_name, {'o':o})
 
-
-class Take(View):
-	template_name = "take.html"
-	def get(self, request, pk, *args, **kwargs):
 		
 
 
